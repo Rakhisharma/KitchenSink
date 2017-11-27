@@ -53,7 +53,7 @@ namespace KitchenSink
             Handle.GET("/KitchenSink/partial/integer", () => new IntegerPage());
             Handle.GET("/KitchenSink/integer", () => WrapPage<IntegerPage>("/KitchenSink/partial/integer"));
 
-            Handle.GET("/KitchenSink/partial/Geo", () =>
+            Handle.GET("/KitchenSink/partial/Map", () =>
             {
                 return Db.Scope(() =>
                 {
@@ -62,7 +62,7 @@ namespace KitchenSink
                     return geoPage;
                 });
             });
-            Handle.GET("/KitchenSink/Geo", () => WrapPage<GeoPage>("/KitchenSink/partial/Geo"));
+            Handle.GET("/KitchenSink/Map", () => WrapPage<GeoPage>("/KitchenSink/partial/Map"));
 
             Handle.GET("/KitchenSink/partial/markdown", () => new MarkdownPage());
             Handle.GET("/KitchenSink/markdown", () => WrapPage<MarkdownPage>("/KitchenSink/partial/markdown"));
