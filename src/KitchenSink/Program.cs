@@ -57,12 +57,12 @@ namespace KitchenSink
             {
                 return Db.Scope(() =>
                 {
-                    var geoPage = new GeoPage();
-                    geoPage.Init();
-                    return geoPage;
+                    var mapPage = new MapPage();
+                    mapPage.Init();
+                    return mapPage;
                 });
             });
-            Handle.GET("/KitchenSink/Map", () => WrapPage<GeoPage>("/KitchenSink/partial/Map"));
+            Handle.GET("/KitchenSink/Map", () => WrapPage<MapPage>("/KitchenSink/partial/Map"));
 
             Handle.GET("/KitchenSink/partial/markdown", () => new MarkdownPage());
             Handle.GET("/KitchenSink/markdown", () => WrapPage<MarkdownPage>("/KitchenSink/partial/markdown"));
