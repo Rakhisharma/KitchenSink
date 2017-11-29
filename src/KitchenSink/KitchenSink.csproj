@@ -241,7 +241,7 @@
     <Content Include="wwwroot\KitchenSink\FileUploadPage.html" />
     <Content Include="wwwroot\KitchenSink\HtmlPage.html" />
     <Content Include="wwwroot\KitchenSink\MasterPage.html" />
-    <Content Include="wwwroot\KitchenSink\GoogleMapPage.html" />
+    <Content Include="wwwroot\KitchenSink\MapPage.html" />
     <Content Include="wwwroot\KitchenSink\MarkdownPage.html" />
     <Content Include="wwwroot\KitchenSink\NestedPartial.html" />
     <Content Include="wwwroot\KitchenSink\PasswordPage.html" />
