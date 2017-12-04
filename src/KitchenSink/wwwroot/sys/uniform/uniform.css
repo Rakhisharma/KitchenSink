@@ -1,0 +1,42 @@
+/**
+ * Uniform.css
+ * (c) Starcounter
+ */
+
+/**
+ * .uniform-label-control
+ * Puts slotted input in the left column, everything else in the right column
+ */
+
+.uniform-label-control {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 16px;
+    align-items: baseline;
+}
+
+.uniform-label-control > *,
+.uniform-label-control > ::slotted(*) {
+    grid-column: 2 / 3;
+    width: 100%;
+}
+
+.uniform-label-control > ::slotted(label) {
+    text-align: right;
+    grid-column: 1 / 2;
+}
+
+.uniform-label-control > ::slotted(label.of-paper-input) {
+    align-self: end;
+    padding-bottom: 6px;
+}
+
+/** 
+ *
+ */
+    
+.uniform-button-secondary ::slotted(button) {
+    background-color: white !important;
+    border: 0.1rem solid var(--primary, #9b4dca) !important;
+    color: var(--primary, #9b4dca) !important;
+}
