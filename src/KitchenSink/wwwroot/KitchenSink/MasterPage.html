@@ -1,5 +1,13 @@
-﻿<template>
-    <link rel="stylesheet" href="/KitchenSink/style.css">
+﻿<link rel="stylesheet" href="/KitchenSink/style.css">
+<script>
+(function(){
+    var importDoc = document.currentScript.ownerDocument;
+    var elem = importDoc.querySelector("link[rel='stylesheet']")
+    document.head.appendChild(elem);        
+})();
+</script>
+
+<template>
     <template id="root" is="dom-bind">
         <starcounter-include slot="kitchensink/nav" partial="{{model.NavPage}}"></starcounter-include>
         <starcounter-include slot="kitchensink/current" partial="{{model.CurrentPage}}"></starcounter-include>
