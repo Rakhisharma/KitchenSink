@@ -2,8 +2,8 @@
 
 <template>
     <template is="dom-bind">
-        <h1 slot="kitchensink/dropdown-heading" class="kitchensink-heading-1">Dropdown</h1>
-        <h2 slot="kitchensink/dropdown-primitive-array-heading" class="kitchensink-heading-2">Primitive array</h2>
+        <h1 slot="kitchensink/dropdown-heading">Dropdown</h1>
+        <h2 slot="kitchensink/dropdown-primitive-array-heading">Primitive array</h2>
         <p slot="kitchensink/dropdown-pets-description">A combination of JSON's primitive value types <code>array</code>, <code>object</code> and <code>number</code> can be mapped to an HTML <code>select</code> element.</p>
 
         <select slot="kitchensink/dropdown-pets-dropdown" class="kitchensink-select kitchensink-test-pets-select" value="{{model.SelectedPet$::change}}">
@@ -14,7 +14,7 @@
 
         <div slot="kitchensink/dropdown-pets-reaction" class="kitchensink-test-pet-like-label">{{model.PetReaction}}</div>
 
-        <h2 slot="kitchensink/dropdown-objects-heading" class="kitchensink-heading-2">Objects array</h2>
+        <h2 slot="kitchensink/dropdown-objects-heading">Objects array</h2>
 
         <p slot="kitchensink/dropdown-objects-description">A combination of object <code>array</code> and bound JSON string property can be mapped to an HTML <code>select</code> element.</p>
    

@@ -2,7 +2,7 @@
 
 <template>
     <template is="dom-bind">
-        <h1 slot="kitchensink/fileupload-heading" class="kitchensink-heading-1">File Upload</h1>
+        <h1 slot="kitchensink/fileupload-heading">File Upload</h1>
 
         <p slot="kitchensink/fileupload-description">Upload big files with <a href="https://github.com/Starcounter/starcounter-upload/"><code>starcounter-upload</code></a> over WebSocket</p>
 
@@ -10,7 +10,7 @@
             <b>Warning:</b> this example requires <code>Polymer 1.3.1</code> which comes with <code>Starcounter 2.1.1367</code> or higher.
         </small>
 
-        <h2 slot="kitchensink/fileupload-upload-file-header" class="kitchensink-heading-2">Uploaded files</h2>
+        <h2 slot="kitchensink/fileupload-upload-file-header">Uploaded files</h2>
         <div slot="kitchensink/fileupload-files-table">
             <template is="dom-if" if="{{model.Files.length}}">
                 <table class="table">
@@ -46,7 +46,7 @@
             </template>
         </div>
 
-        <h2 slot="kitchensink/fileupload-uploading-header" class="kitchensink-heading-2">Uploading files</h2>
+        <h2 slot="kitchensink/fileupload-uploading-header">Uploading files</h2>
         <div slot="kitchensink/fileupload-uploading-table">
             <template is="dom-if" if="{{model.Tasks.length}}">
                 <table class="table">
