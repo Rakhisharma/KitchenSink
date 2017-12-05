@@ -3,29 +3,41 @@
  * (c) Starcounter
  */
 
-/*Color variables based on Bootstrap 4*/
 :root {
-  --blue: #007bff;
+  /*Starcounter default color variables*/
+  --dark: #141D26;
+  --inky: #1B2936;
+  --livid: #8696A5;
+  --mouse: #E7ECF0;
+  --blue-dark: #1A587F;
+  --blue: #0084B4;
+  --platinum: #E7E7E7;
+  --white-smoke: #EFEFEF;
+  --light: #F6F6F6;
+  --yellow: #FFDB25;
+  --red: #DF4534;
+  --green: #3FA13F;
+
+  /*Color variables based on Bootstrap 4*/
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
-  --red: #dc3545;
   --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
+  --green: #3FA13F;
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #fff;
   --gray: #868e96;
   --gray-dark: #343a40;
-  --primary: var(--pink);
-  --secondary: var(--gray);
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #343a40;
+
+  --default: var(--light);
+  --primary: var(--blue);
+  --secondary: var(--platinum);
+  --success: var(--green);
+  --danger: var(--red);
+  --info: var(--cyan);
+  --warning: var(--yellow);
+
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -106,8 +118,8 @@ input[type='reset']:focus,
 input[type='reset']:hover,
 input[type='submit']:focus,
 input[type='submit']:hover {
-  background-color: #606c76;
-  border-color: #606c76;
+  background-color: var(--blue-dark);
+  border-color: var(--blue-dark);
   color: #fff;
   outline: 0;
 }
@@ -128,8 +140,8 @@ input[type='reset'][disabled]:focus,
 input[type='reset'][disabled]:hover,
 input[type='submit'][disabled]:focus,
 input[type='submit'][disabled]:hover {
-  background-color: #9b4dca;
-  border-color: #9b4dca;
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 button.button-outline,
@@ -162,7 +174,7 @@ input[type='reset'].button-outline[disabled]:hover,
 input[type='submit'].button-outline[disabled]:focus,
 input[type='submit'].button-outline[disabled]:hover {
   border-color: inherit;
-  color: #9b4dca;
+  color: var(--secondary);
 }
 
 code {
@@ -176,7 +188,7 @@ code {
 
 pre {
   background: #f4f5f6;
-  border-left: 0.3rem solid #9b4dca;
+  border-left: 0.3rem solid var(--primary);
   overflow-y: hidden;
 }
 
@@ -223,7 +235,7 @@ input[type='text']:focus,
 input[type='url']:focus,
 textarea:focus,
 select:focus {
-  border-color: #9b4dca;
+  border-color: var(--primary);
   outline: 0;
 }
 
@@ -408,4 +420,3 @@ img {
 body > starcounter-include {
     height: 100%;
 }
-
