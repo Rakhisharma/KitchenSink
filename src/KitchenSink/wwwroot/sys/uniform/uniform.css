@@ -10,8 +10,8 @@
 
 .uniform-label-control {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    grid-gap: 16px;
+    grid-template-columns: 150px 1fr;
+    grid-column-gap: 10px;
     align-items: baseline;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .uniform-label-control > ::slotted(label) {
-    text-align: right;
+    text-align: left;
     grid-column: 1 / 2;
 }
 
@@ -34,9 +34,9 @@
 /** 
  *
  */
-    
+
 .uniform-button-secondary ::slotted(button) {
-    background-color: white !important;
-    border: 0.1rem solid var(--primary, #9b4dca) !important;
-    color: var(--primary, #9b4dca) !important;
+    background-color: var(--white, #fff) !important;
+    border: 0.1rem solid var(--primary, #0084B4) !important;
+    color: var(--primary, #0084B4) !important;
 }

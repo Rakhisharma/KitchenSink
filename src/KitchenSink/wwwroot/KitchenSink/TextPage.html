@@ -29,21 +29,33 @@
         <p slot="kitchensink/text-typing-listening-paper-label">If you need to observe the changes while typing, paper-text triggers <code>value-changed</code> event after each keystroke. This allows to bind it live with the server:</p>       
 
         <paper-input slot="kitchensink/text-typing-listening-paper-input" label="{{model.NameForPaperLiveReaction}}" value="{{model.NameForPaperLive$::value-changed}}" class="kitchensink-test-name-paper-input-dynamic"></paper-input>
+        <button slot="kitchensink/button-cancel">Cancel</button>
+
     </template>
     <template is="declarative-shadow-dom">
+        <style>
+            @import "/sys/uniform/uniform.css";
+        </style>
         <slot name="kitchensink/text-heading"></slot>
         <slot name="kitchensink/text-description"></slot>
         <slot name="kitchensink/text-listening-heading"></slot>
         <slot name="kitchensink/text-listening-description"></slot>
-        <slot name="kitchensink/text-listening-label"></slot>
-        <slot name="kitchensink/text-listening-input"></slot>
+        <div class="uniform-label-control">
+            <slot name="kitchensink/text-listening-label"></slot>
+            <slot name="kitchensink/text-listening-input"></slot>
+        </div>
         <slot name="kitchensink/text-typing-listening-heading"></slot>
         <slot name="kitchensink/text-typing-listening-description"></slot>
-        <slot name="kitchensink/text-typing-listening-label"></slot>
-        <slot name="kitchensink/text-typing-listening-input"></slot>
+        <div class="uniform-label-control">
+            <slot name="kitchensink/text-typing-listening-label"></slot>
+            <slot name="kitchensink/text-typing-listening-input"></slot>
+        </div>
         <slot name="kitchensink/text-listening-paper-label"></slot>
         <slot name="kitchensink/text-listening-paper-input"></slot>
         <slot name="kitchensink/text-typing-listening-paper-label"></slot>
         <slot name="kitchensink/text-typing-listening-paper-input"></slot>
+        <span class="uniform-button-secondary">
+            <slot name="kitchensink/button-cancel"></slot>
+        </span>
     </template>
 </template>
