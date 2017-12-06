@@ -14,7 +14,7 @@
                 <template is="dom-if" if="{{index}}" restamp>
                     &gt;
                 </template>
-                <button class="btn btn-default" value="{{item.SelectTrigger$::mouseup}}" onmousedown="++this.value">{{item.Name}}</button>
+                <button value="{{item.SelectTrigger$::mouseup}}" class="button" onmousedown="++this.value">{{item.Name}}</button>
             </template>
         </div>
         <h2 slot="kitchensink/breadcrumb-navigation-breadcrumb-heading">Breadcrumb with navigation</h2>
@@ -61,7 +61,9 @@
         <slot name="kitchensink/breadcrumb-heading"></slot>
         <slot name="kitchensink/breadcrumb-simple-breadcrumb-heading"></slot>
         <slot name="kitchensink/breadcrumb-simple-breadcrumb-description"></slot>
-        <slot name="kitchensink/breadcrumb-simple-breadcrumb"></slot>
+        <div class="uniform-breadcrumb">
+            <slot name="kitchensink/breadcrumb-simple-breadcrumb"></slot>
+        </div>
         <slot name="kitchensink/breadcrumb-navigation-breadcrumb-heading"></slot>
         <slot name="kitchensink/breadcrumb-navigation-breadcrumb-description"></slot>
         <slot name="kitchensink/breadcrumb-navigation-breadcrumb"></slot>
@@ -70,7 +72,7 @@
         <slot name="kitchensink/breadcrumb-name-heading"></slot>
         <slot name="kitchensink/breadcrumb-name-input"></slot>
         <span class="uniform-button-success">
-            <slot name="kitchensink/breadcrumb-name-save" class="uniform-button-primary"></slot>
+            <slot name="kitchensink/breadcrumb-name-save"></slot>
         </span>
     </template>
 </template>

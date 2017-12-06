@@ -20,12 +20,17 @@
             </template>
             </tbody>
         </table>
-        <button slot="kitchensink/table-button" class="btn btn-sm btn-default" value="{{model.AddPetTrigger$::click}}" onmousedown="++this.value">Add a pet</button>
+        <button slot="kitchensink/table-button" value="{{model.AddPetTrigger$::click}}" onmousedown="++this.value">Add a pet</button>
     </template>
     <template is="declarative-shadow-dom">
+        <style>
+            @import "/sys/uniform/uniform.css";
+        </style>
         <slot name="kitchensink/table-heading"></slot>
         <slot name="kitchensink/table-description"></slot>
         <slot name="kitchensink/table-table"></slot>
-        <slot name="kitchensink/table-button"></slot>
+        <span class="uniform-button-default">
+            <slot name="kitchensink/table-button"></slot>
+        </span>
     </template>
 </template>

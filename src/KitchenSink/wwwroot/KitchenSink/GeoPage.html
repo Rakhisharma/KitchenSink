@@ -11,12 +11,17 @@
         <google-map slot="kitchensink/geo-google-map" class="kitchensink-google-map" latitude="[[model.Position.Latitude$]]" longitude="[[model.Position.Longitude$]]" fit-to-markers zoom="12">
             <google-map-marker id="kitchensink-geopage-marker" draggable="true" title="Hi Stockholm!" latitude="{{model.Position.Latitude$}}" longitude="{{model.Position.Longitude$}}"></google-map-marker>
         </google-map>
-        <button slot="kitchensink/geo-reset-button" value="{{model.Position.ResetTrigger$::click}}" onclick="this.value++" class="btn btn-primary">Reset</button>
+        <button slot="kitchensink/geo-reset-button" value="{{model.Position.ResetTrigger$::click}}" onclick="this.value++">Reset</button>
     </template>
     <template is="declarative-shadow-dom">
+        <style>
+            @import "/sys/uniform/uniform.css";
+        </style>
         <slot name="kitchensink/geo-heading"></slot>
         <slot name="kitchensink/geo-description"></slot>
         <slot name="kitchensink/geo-google-map"></slot>
-        <slot name="kitchensink/geo-reset-button"></slot>
+        <span class="uniform-button-default">
+            <slot name="kitchensink/geo-reset-button"></slot>
+        </span>
     </template>
 </template>

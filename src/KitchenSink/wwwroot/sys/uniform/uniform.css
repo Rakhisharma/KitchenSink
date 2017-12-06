@@ -35,10 +35,20 @@
  *
  */
 
-.uniform-button-secondary ::slotted(button) {
+.uniform-button-default ::slotted(button) {
     background-color: var(--white, #fff) !important;
     border: 0.1rem solid var(--primary, #0084B4) !important;
     color: var(--primary, #0084B4) !important;
+    padding: 5px 10px !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    border-radius: 3px !important;
+    height: inherit !important;
+}
+
+.uniform-button-default:hover ::slotted(button),
+.uniform-button-default:focus ::slotted(button) {
+    background-color: var(--platinum, #E7E7E7) !important;
 }
 
 .uniform-button-success ::slotted(button) {
@@ -50,4 +60,12 @@
 .uniform-button-success:hover ::slotted(button),
 .uniform-button-success:focus ::slotted(button) {
     background-color: darkgreen !important;
+}
+
+/** 
+ *
+ */
+
+.uniform-breadcrumb > ::slotted(button) { /*TODO: Currently not working. Needs further investigate*/
+    background-color: red !important;
 }
