@@ -40,3 +40,14 @@
     border: 0.1rem solid var(--primary, #0084B4) !important;
     color: var(--primary, #0084B4) !important;
 }
+
+.uniform-button-success ::slotted(button) {
+    background-color: var(--green, #3FA13F) !important;
+    border: 0.1rem solid var(--primary, #0084B4) !important;
+    color: var(--white, #fff) !important;
+}
+
+.uniform-button-success:hover ::slotted(button),
+.uniform-button-success:focus ::slotted(button) {
+    background-color: darkgreen !important;
+}

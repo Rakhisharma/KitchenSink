@@ -55,6 +55,9 @@
         <button slot="kitchensink/breadcrumb-name-save" class="btn btn-sm btn-default" value="{{model.CurrentTreeItem.SaveTrigger$::click}}" onmousedown="++this.value">Save</button>
     </template>
     <template is="declarative-shadow-dom">
+        <style>
+            @import "/sys/uniform/uniform.css";
+        </style>
         <slot name="kitchensink/breadcrumb-heading"></slot>
         <slot name="kitchensink/breadcrumb-simple-breadcrumb-heading"></slot>
         <slot name="kitchensink/breadcrumb-simple-breadcrumb-description"></slot>
@@ -66,6 +69,8 @@
         <slot name="kitchensink/breadcrumb-editing-heading"></slot>
         <slot name="kitchensink/breadcrumb-name-heading"></slot>
         <slot name="kitchensink/breadcrumb-name-input"></slot>
-        <slot name="kitchensink/breadcrumb-name-save"></slot>
+        <span class="uniform-button-success">
+            <slot name="kitchensink/breadcrumb-name-save" class="uniform-button-primary"></slot>
+        </span>
     </template>
 </template>
