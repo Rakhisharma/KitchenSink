@@ -98,7 +98,6 @@ input[type='submit'] {
   padding: 8px 15px;
   cursor: pointer;
   display: inline-block;
-  font-size: 14px;
   height: inherit;
   line-height: 1.5rem;
   text-align: center;
@@ -107,17 +106,20 @@ input[type='submit'] {
 
 }
 
-button:focus,
 button:hover,
-input[type='button']:focus,
 input[type='button']:hover,
-input[type='reset']:focus,
 input[type='reset']:hover,
-input[type='submit']:focus,
 input[type='submit']:hover {
   background-color: var(--platinum, #E7E7E7);
   border-color: var(--platinum, #E7E7E7);
   outline: 0;
+}
+
+button:focus,
+input[type='button']:focus,
+input[type='reset']:focus,
+input[type='submit']:focus {
+    outline: 0;
 }
 
 button[disabled],

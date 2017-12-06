@@ -40,7 +40,6 @@
     background-color: var(--primary) !important;
     border: 0.1rem solid var(--primary) !important;
     padding: 8px 15px !important;
-    font-size: 12px !important;
     line-height: 1.5 !important;
     border-radius: 3px !important;
     height: inherit !important;
@@ -53,7 +52,6 @@
 
 .uniform-button-success ::slotted(button) {
     background-color: var(--green, #3FA13F) !important;
-    border: 0.1rem solid var(--primary, #0084B4) !important;
     color: var(--white, #fff) !important;
 }
 
