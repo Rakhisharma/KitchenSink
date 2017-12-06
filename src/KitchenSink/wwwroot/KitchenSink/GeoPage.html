@@ -14,14 +14,9 @@
         <button slot="kitchensink/geo-reset-button" value="{{model.Position.ResetTrigger$::click}}" onclick="this.value++">Reset</button>
     </template>
     <template is="declarative-shadow-dom">
-        <style>
-            @import "/sys/uniform/uniform.css";
-        </style>
         <slot name="kitchensink/geo-heading"></slot>
         <slot name="kitchensink/geo-description"></slot>
         <slot name="kitchensink/geo-google-map"></slot>
-        <span class="uniform-button-default">
-            <slot name="kitchensink/geo-reset-button"></slot>
-        </span>
+        <slot name="kitchensink/geo-reset-button"></slot>
     </template>
 </template>

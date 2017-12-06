@@ -33,15 +33,10 @@
         })();
     </script>
     <template is="declarative-shadow-dom">
-        <style>
-            @import "/sys/uniform/uniform.css";
-        </style>
         <slot name="kitchensink/cookie-heading"></slot>
         <slot name="kitchensink/cookie-description"></slot>
         <slot name="kitchensink/cookie-request-label"></slot>
         <slot name="kitchensink/cookie-side-label"></slot>
-        <span class="uniform-button-default">
-            <slot name="kitchensink/cookie-button"></slot>
-        </span>
+        <slot name="kitchensink/cookie-button"></slot>
     </template>
 </template>

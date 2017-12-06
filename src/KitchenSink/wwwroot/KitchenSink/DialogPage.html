@@ -25,15 +25,10 @@
         </paper-dialog>
     </template>
     <template is="declarative-shadow-dom">
-        <style>
-            @import "/sys/uniform/uniform.css";
-        </style>
         <slot name="kitchensink/dialog-heading"></slot>
         <slot name="kitchensink/dialog-description"></slot>
         <p>
-            <span class="uniform-button-default">
-                <slot name="kitchensink/dialog-button"></slot>
-            </span>
+            <slot name="kitchensink/dialog-button"></slot>
         </p>
         <slot name="kitchensink/dialog-message"></slot>
         <slot name="kitchensink/dialog-paper-dialog"></slot>

@@ -192,20 +192,12 @@
         })();
     </script>
 <template is="declarative-shadow-dom">
-    <style>
-        @import "/sys/uniform/uniform.css";
-    </style>
-
     <slot name="kitchensink/callback-heading"></slot>
     <slot name="kitchensink/callback-description"></slot>
     <slot name="kitchensink/callback-responsive-label"></slot>
     <div>
-        <span class="uniform-button-default">
-            <slot name="kitchensink/callback-responsive-button"></slot>
-        </span>
-        <span class="uniform-button-default">
-            <slot name="kitchensink/callback-responsive-button-spin"></slot>
-        </span>
+        <slot name="kitchensink/callback-responsive-button"></slot>
+        <slot name="kitchensink/callback-responsive-button-spin"></slot>
     </div>
     <slot name="kitchensink/callback-save-server-heading"></slot>
     <slot name="kitchensink/callback-save-server-message"></slot>
@@ -213,7 +205,6 @@
     <slot name="kitchensink/callback-save-client-heading"></slot>
     <slot name="kitchensink/callback-save-client-note"></slot>
     <slot name="kitchensink/callback-save-client-message"></slot>
-
     <p>
         <slot name="kitchensink/callback-save-client-button"></slot>
     </p>
