@@ -70,9 +70,8 @@ html {
 
 body {
   color: #606c76;
-  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-size: 1.6em;
-  font-weight: 300;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 14px;
   letter-spacing: .01em;
   line-height: 1.6;
 }
@@ -99,9 +98,7 @@ input[type='submit'] {
   cursor: pointer;
   display: inline-block;
   font-size: 1.1rem;
-  font-weight: 700;
   height: 3.8rem;
-  letter-spacing: .1rem;
   line-height: 3.8rem;
   padding: 0 3.0rem;
   text-align: center;

@@ -6,7 +6,7 @@
 
         <p slot="kitchensink/dialog-description">Modal dialog box example</p>
 
-        <button slot="kitchensink/dialog-button" class="btn btn-sm btn-default" value="{{model.OpenTrigger$::click}}" onmousedown="++this.value">Open dialog box</button>
+        <button slot="kitchensink/dialog-button" value="{{model.OpenTrigger$::click}}" onmousedown="++this.value">Open dialog box</button>
 
         <p slot="kitchensink/dialog-message" class$="{{model.MessageCss}}">{{model.Message}}</p>
 
@@ -25,10 +25,15 @@
         </paper-dialog>
     </template>
     <template is="declarative-shadow-dom">
+        <style>
+            @import "/sys/uniform/uniform.css";
+        </style>
         <slot name="kitchensink/dialog-heading"></slot>
         <slot name="kitchensink/dialog-description"></slot>
         <p>
-            <slot name="kitchensink/dialog-button"></slot>
+            <span class="uniform-button-default">
+                <slot name="kitchensink/dialog-button"></slot>
+            </span>
         </p>
         <slot name="kitchensink/dialog-message"></slot>
         <slot name="kitchensink/dialog-paper-dialog"></slot>

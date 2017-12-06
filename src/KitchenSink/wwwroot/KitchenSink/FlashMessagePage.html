@@ -39,17 +39,24 @@
         })();
     </script>
     <template is="declarative-shadow-dom">
+        <style>
+            @import "/sys/uniform/uniform.css";
+        </style>
         <slot name="kitchensink/flashMessage-heading"></slot>
         <slot name="kitchensink/flashMessage-description"></slot>
         <slot name="kitchensink/flashMessage-dom-if-description"></slot>
         <slot name="kitchensink/flashMessage-schedule-task-description"></slot>
         <p>
-            <slot name="kitchensink/flashMessage-server-button"></slot>          
+            <span class="uniform-button-default">
+                <slot name="kitchensink/flashMessage-server-button"></slot>
+            </span>
         </p>
         <slot name="kitchensink/flashMessage-server-message"></slot>
         <slot name="kitchensink/flashMessage-client-description"></slot>
         <p>
-            <slot name="kitchensink/flashMessage-client-button"></slot>
+            <span class="uniform-button-default">
+                <slot name="kitchensink/flashMessage-client-button"></slot>
+            </span>
         </p>
         <slot name="kitchensink/flashMessage-client-message"></slot>
     </template>
