@@ -22,7 +22,7 @@
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
-  --orange: #fd7e14;
+  --orange: #f0ad4e;
   --green: #3FA13F;
   --teal: #20c997;
   --cyan: #17a2b8;
@@ -410,6 +410,36 @@ img {
   max-width: 100%;
 }
 
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.alert-danger {
+  color: var(--white, #fff);
+  background-color: var(--red, #DF4534);
+  border-color: var(--red, #DF4534);
+}
+
+.alert-success {
+  color: var(--white, #fff);
+  background-color: var(--green, #3FA13F);
+  border-color: var(--green, #3FA13F);
+}
+
+.alert-warning {
+  color: var(--white, #fff);
+  background-color: var(--orange, #f0ad4e);
+  border-color: var(--orange, #f0ad4e);
+}
 
 /* Starcounter */
 
