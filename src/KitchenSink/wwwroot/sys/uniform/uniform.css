@@ -37,8 +37,8 @@
 
 .uniform-button-primary ::slotted(button) {
     color: #fff !important;
-    background-color: var(--primary) !important;
-    border: 0.1rem solid var(--primary) !important;
+    background-color: var(--primary, #0084B4) !important;
+    border: 0.1rem solid var(--primary, #0084B4) !important;
     border-radius: 3px !important;
     height: inherit !important;
 }
@@ -61,3 +61,37 @@
 /** 
  *
  */
+
+.uniform-pagination {
+    display: inline-block;
+}
+
+.uniform-pagination > ::slotted(*) {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Edge */
+    user-select: none;
+}
+
+.uniform-pagination > ::slotted(span.active) {
+    background-color: var(--primary, #0084B4);
+    color: white;
+    border: 1px solid var(--primary, #0084B4);
+}
+
+.uniform-pagination > ::slotted(span.disabled) {
+    color: var(--livid, #8696A5);
+    cursor: not-allowed;
+}
+
+.uniform-pagination > ::slotted(span:hover:not(.active)) {
+    background-color: #ddd;
+}
