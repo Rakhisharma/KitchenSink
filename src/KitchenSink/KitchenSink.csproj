@@ -214,6 +214,7 @@
     <Content Include="wwwroot\KitchenSink\ButtonPage.html" />
     <Content Include="wwwroot\KitchenSink\CallbackPage.html" />
     <Content Include="wwwroot\KitchenSink\ChartPage.html" />
+    <Content Include="wwwroot\sys\underwear\underwear.css" />
     <TypedJSON Include="FlashMessagePage.json">
       <Generator>MsBuild:Compile</Generator>
     </TypedJSON>
