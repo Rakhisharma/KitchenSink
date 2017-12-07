@@ -9,14 +9,13 @@
 
         <p slot="kitchensink/breadcrumb-simple-breadcrumb-description">A JSON <code>array</code> of <code>objects</code> can used as a breadcrumb navigation. The below example uses <code>template is="dom-repeat"</code> with <code>span</code>.
         </p>
-        <div slot="kitchensink/breadcrumb-simple-breadcrumb">
-            <template is="dom-repeat" items="{{model.Breadcrumbs}}" restamp>
-                <template is="dom-if" if="{{index}}" restamp>
-                    &gt;
-                </template>
-                <button value="{{item.SelectTrigger$::mouseup}}" class="button" onmousedown="++this.value">{{item.Name}}</button>
+        <template is="dom-repeat" items="{{model.Breadcrumbs}}" restamp>
+            <template is="dom-if" if="{{index}}" restamp>
+                <span slot="kitchensink/breadcrumb-simple-breadcrumb">&gt;</span>
             </template>
-        </div>
+            <button slot="kitchensink/breadcrumb-simple-breadcrumb" value="{{item.SelectTrigger$::mouseup}}" class="button" onmousedown="++this.value">{{item.Name}}</button>
+        </template>
+
         <h2 slot="kitchensink/breadcrumb-navigation-breadcrumb-heading">Breadcrumb with navigation</h2>
 
         <p slot="kitchensink/breadcrumb-navigation-breadcrumb-description">It doesn't take much more to add a multidimensional navigation to the breadcrumb. The below example uses <code>template is="dom-repeat"</code> with <code><a href="https://github.com/Juicy/x-breadcrumb">x-breadcrumb</a></code> custom element.
@@ -61,7 +60,7 @@
         <slot name="kitchensink/breadcrumb-heading"></slot>
         <slot name="kitchensink/breadcrumb-simple-breadcrumb-heading"></slot>
         <slot name="kitchensink/breadcrumb-simple-breadcrumb-description"></slot>
-        <div class="uniform-breadcrumb">
+        <div>
             <slot name="kitchensink/breadcrumb-simple-breadcrumb"></slot>
         </div>
         <slot name="kitchensink/breadcrumb-navigation-breadcrumb-heading"></slot>

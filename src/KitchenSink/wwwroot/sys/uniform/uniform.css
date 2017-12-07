@@ -63,7 +63,3 @@
 /** 
  *
  */
-
-.uniform-breadcrumb > ::slotted(button) { /*TODO: Currently not working. Needs further investigate*/
-    background-color: red !important;
-}
