@@ -23,11 +23,11 @@
         <p slot="kitchensink/buttonpage-regular-add-carrots" class="kitchensink-add-carrots">
             <span class="kitchensink-add-carrots__label">Add carrots:</span>
 
-            <button class="btn btn-sm btn-default" value="{{model.AddCarrotsTrigger$::click}}" onmousedown="++this.value">Button (inline script)</button>
+            <button value="{{model.AddCarrotsTrigger$::click}}" onmousedown="++this.value">Button (inline script)</button>
 
-            <button class="btn btn-sm btn-default" on-click="onAddCarrotsClick">Button (function)</button>
+            <button on-click="onAddCarrotsClick">Button (function)</button>
 
-            <span class="btn btn-sm btn-default" on-click="onAddCarrotsClick">Span (function)</span>
+            <span on-click="onAddCarrotsClick">Span (function)</span>
         </p>
 
         <h2 slot="kitchensink/buttonpage-switch-heading">Switch button</h2>
@@ -35,7 +35,7 @@
         <p slot="kitchensink/buttonpage-switch-description">When you have a special need to use the pressed state of a button, you might want to use <code>boolean</code> type for buttons.
         </p>
 
-        <button slot="kitchensink/buttonpage-switch-button" class="btn btn-sm btn-default kitchensink-toggle-button" pressed$="{{model.EnableCarrotEngine$}}" on-click="onEnableCarrotEngineClick">Enable carrot engine</button>
+        <button slot="kitchensink/buttonpage-switch-button" class="kitchensink-toggle-button" pressed$="{{model.EnableCarrotEngine$}}" on-click="onEnableCarrotEngineClick">Enable carrot engine</button>
 
         <span slot="kitchensink/buttonpage-switch-reaction-label" class="kitchensink-test-carrot-engine-reaction-label">{{model.CarrotEngineReaction}}</span>
 
@@ -44,7 +44,7 @@
         <p slot="kitchensink/buttonpage-disable-description">It is possible to mark button as disabled using the <code>disabled</code> boolean attribute. The below button gets disbled when the value reaches 1.
         </p>
 
-        <button slot="kitchensink/buttonpage-disable-button" class="btn btn-sm btn-default kitchensink-toggle-button" value="{{model.AddOneCarrotTrigger$::click}}" onmousedown="++this.value" disabled$="{{model.AddOneCarrotDisabled}}">Add carrots</button>
+        <button slot="kitchensink/buttonpage-disable-button" class="kitchensink-toggle-button" value="{{model.AddOneCarrotTrigger$::click}}" onmousedown="++this.value" disabled$="{{model.AddOneCarrotDisabled}}">Add carrots</button>
 
         <span slot="kitchensink/buttonpage-disable-label" class="kitchensink-test-one-carrot-reaction-label">{{model.OneCarrotReaction}}</span>
 
@@ -52,7 +52,7 @@
 
         <p slot="kitchensink/buttonpage-self-reaction-label">It is also possible to make the server respond to the button click. The following buttons will stay disabled until the server responds to them being clicked.</p>
         <div slot="kitchensink/buttonpage-self-button" class="kitchensink-regenerating-carrots">
-            <button class="btn btn-sm btn-default kitchensink-toggle-button" value="{{model.TakeOneRegeneratingCarrotTrigger$::click}}" disabled="{{model.TakeOneRegeneratingCarrotTrigger$}}" onmouseup="++this.value">Take one Regenerating Carrot</button>
+            <button class="kitchensink-toggle-button" value="{{model.TakeOneRegeneratingCarrotTrigger$::click}}" disabled="{{model.TakeOneRegeneratingCarrotTrigger$}}" onmouseup="++this.value">Take one Regenerating Carrot</button>
             <template is="dom-if" if="{{model.TakeOneRegeneratingCarrotTrigger$}}">
                 <p class="kitchensink-test-self-button-label">Currently Regenerating!</p>
             </template>
@@ -61,7 +61,7 @@
         <h2 slot="kitchensink/buttonpage-binding-issue-heading">Button with children</h2>
         <p slot="kitchensink/buttonpage-binding-issue-description">Because of an <a href="https://github.com/Polymer/polymer/issues/2497">issue in Polymer 1</a>, data bindings for buttons with child elements writes undefined value to the view-model property bound to the buttons, which leads to server disconnection. As a workaround, set the <code>pointer-events</code> property to <code>none</code> on the children of the button.</p>
         <p slot="kitchensink/buttonpage-binding-issue-click-label"><b>Click to buy a carrot!</b></p>
-        <button slot="kitchensink/buttonpage-binding-issue-button" class="btn btn-sm btn-default kitchensink-toggle-button kitchesink-test-buy-carrot-button" value="{{model.BuyCarrotTrigger$::click}}" onmousedown="++this.value"><span class="glyphicon glyphicon-usd kitchensink-buy-carrot"></span></button>
+        <button slot="kitchensink/buttonpage-binding-issue-button" class="kitchensink-toggle-button kitchesink-test-buy-carrot-button" value="{{model.BuyCarrotTrigger$::click}}" onmousedown="++this.value"><span class="glyphicon glyphicon-usd kitchensink-buy-carrot"></span></button>
         <span slot="kitchensink/buttonpage-binding-issue-label" class="kitchensink-test-buy-carrot-reaction-label">{{model.OnBuyReaction}}</span>
     </template>
     <script>

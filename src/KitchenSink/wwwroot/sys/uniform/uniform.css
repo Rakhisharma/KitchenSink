@@ -39,8 +39,6 @@
     color: #fff !important;
     background-color: var(--primary) !important;
     border: 0.1rem solid var(--primary) !important;
-    padding: 8px 15px !important;
-    line-height: 1.5 !important;
     border-radius: 3px !important;
     height: inherit !important;
 }

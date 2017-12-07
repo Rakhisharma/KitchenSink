@@ -11,6 +11,11 @@
   display: block;
 }
 
+.kitchensink-juicyselect__select {
+    min-height: 70px;
+    min-width: 200px;
+}
+
 .kitchensink-x-breadcrumb {
     margin-bottom: 20px;
 }
@@ -171,9 +176,10 @@
     background-color: white;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.37);
     list-style-type: none;
-    padding: 0px;
-    margin: 2px 0px;
+    padding: 0;
+    margin-top: -15px;
     position: absolute;
+    cursor: pointer;
 }
 
 .kitchensink-text-paper-input-description {

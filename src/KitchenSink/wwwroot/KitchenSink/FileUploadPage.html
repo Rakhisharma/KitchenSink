@@ -13,7 +13,7 @@
         <h2 slot="kitchensink/fileupload-upload-file-header">Uploaded files</h2>
         <div slot="kitchensink/fileupload-files-table">
             <template is="dom-if" if="{{model.Files.length}}">
-                <table class="table">
+                <table>
                     <thead>
                     <tr>
                         <th>Name</th>
@@ -29,13 +29,13 @@
                             <td>{{item.FileSizeString}}</td>
                             <td>{{item.FilePath}}</td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-default kitchensink-test-delete-button" value="{{item.DeleteTrigger$::click}}" onmouseup="++this.value;">Delete</button>
+                                <button type="button" class="kitchensink-test-delete-button" value="{{item.DeleteTrigger$::click}}" onmouseup="++this.value;">Delete</button>
                             </td>
                         </tr>
                     </template>
                     </tbody>
                 </table>
-                <div class="alert alert-warning">
+                <div>
                     Do not forget to delete files from your temporary folder!
                 </div>
             </template>
@@ -49,7 +49,7 @@
         <h2 slot="kitchensink/fileupload-uploading-header">Uploading files</h2>
         <div slot="kitchensink/fileupload-uploading-table">
             <template is="dom-if" if="{{model.Tasks.length}}">
-                <table class="table">
+                <table>
                     <thead>
                     <tr>
                         <th>Name</th>
@@ -81,9 +81,9 @@
 
         <starcounter-upload slot="kitchensink/fileupload-upload" session-id="{{model.SessionId}}" upload-url="{{model.UploadUrl}}" tasks="{{tasks}}" multiple auto-upload></starcounter-upload>
 
-        <button slot="kitchensink/fileupload-select-button" type="button" class="btn btn-sm btn-primary" on-click="selectFile">Select file</button>
+        <button slot="kitchensink/fileupload-select-button" type="button" on-click="selectFile">Select file</button>
 
-        <button slot="kitchensink/fileupload-cancel-button" type="button" class="btn btn-sm btn-default" on-click="cancelUpload" disabled="{{!tasks.length}}">Cancel upload</button>
+        <button slot="kitchensink/fileupload-cancel-button" type="button" on-click="cancelUpload" disabled="{{!tasks.length}}">Cancel upload</button>
 
         <div slot="kitchensink/fileupload-tasks-collection">
             <template is="dom-if" if="{{tasks.length}}">
@@ -92,7 +92,7 @@
                         <h4 class="kitchensink-upload-tasks__heading">Client side <code>tasks</code> collection</h4>
                     </div>
                     <div>
-                        <table class="table table-condensed">
+                        <table>
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -139,6 +139,9 @@
         })();
     </script>
     <template is="declarative-shadow-dom">
+        <style>
+            @import "/sys/uniform/uniform.css";
+        </style>
         <slot name="kitchensink/fileupload-heading"></slot>
         <slot name="kitchensink/fileupload-description"></slot>
         <slot name="kitchensink/fileupload-warning"></slot>
@@ -149,7 +152,9 @@
         <slot name="kitchensink/fileupload-uploading-table"></slot>
         <slot name="kitchensink/fileupload-ongoing-message"></slot>
         <slot name="kitchensink/fileupload-upload"></slot>
-        <slot name="kitchensink/fileupload-select-button"></slot>
+        <span class="uniform-button-primary">
+            <slot name="kitchensink/fileupload-select-button"></slot>
+        </span>
         <slot name="kitchensink/fileupload-cancel-button"></slot>
         <slot name="kitchensink/fileupload-tasks-collection"></slot>
     </template>
