@@ -11,18 +11,19 @@
             <span class="kitchensink-progress-bar__percentages"> {{model.Progress}}% </span>
             <div class="kitchensink-progress-bar__fill" style="width:{{model.Progress}}%"></div>
         </div>
-        <p slot="kitchensink/progressBar-button-area">
-            <button class="kitchensink-progress-bar__button" value="{{model.StartProgressTrigger$::click}}" onmousedown="++this.value" disabled$="{{model.TaskIsRunnning}}"> {{model.DownloadButtonText}} </button>
-            <template is="dom-if" if="{{model.Progress}}">
-                <span>{{model.FileDownloadText}}</span>
-            </template>
-        </p>
+        <button slot="kitchensink/progressBar-button" class="kitchensink-progress-bar__button" value="{{model.StartProgressTrigger$::click}}" onmousedown="++this.value" disabled$="{{model.TaskIsRunnning}}"> {{model.DownloadButtonText}} </button>
+        <template is="dom-if" if="{{model.Progress}}">
+            <span slot="kitchensink/progressBar-button-text">{{model.FileDownloadText}}</span>
+        </template>
     </template>
     <template is="declarative-shadow-dom">
         <slot name="kitchensink/progressBar-heading"></slot>
         <slot name="kitchensink/progressBar-description"></slot>
         <slot name="kitchensink/progressBar-read-more"></slot>
         <slot name="kitchensink/progressBar-progress-bar"></slot>
-        <slot name="kitchensink/progressBar-button-area"></slot>
+        <p>
+            <slot name="kitchensink/progressBar-button"></slot>
+            <slot name="kitchensink/progressBar-button-text"></slot>
+        </p>
     </template>
 </template>

@@ -19,11 +19,9 @@
 
         <p slot="kitchensink/flashMessage-client-description">And by combining <code>&lt;template is="dom-if"&gt;</code> with a click event and a timed function, by using <code>setTimeout</code> you can achieve the same behavior.</p>
         <button slot="kitchensink/flashMessage-client-button" on-click="showMessage">Trigger message from Client side</button>
-        <div slot="kitchensink/flashMessage-client-message">
-            <template is="dom-if" if="{{model.ClientMessage$}}">
-                <p class="alert alert-warning">{{model.ClientMessage$}} </p>
-            </template>
-        </div>
+        <template is="dom-if" if="{{model.ClientMessage$}}">
+            <p slot="kitchensink/flashMessage-client-message" class="alert alert-warning">{{model.ClientMessage$}} </p>
+        </template>
     </template>
     <script>
         (function () {

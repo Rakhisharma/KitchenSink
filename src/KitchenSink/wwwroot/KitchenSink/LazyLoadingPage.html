@@ -30,21 +30,19 @@
             </template>
             </tbody>
         </table>
-        <div slot="kitchensink/lazyLoading-message-box">
-            <template is="dom-if" if="{{model.DisplayHoverBox$}}">
-                <div class="kitchensink-lazy-loading__hover-box">
-                    <p>{{model.SelectedPersonsName$}}'s Favorite game</p>
+        <template is="dom-if" if="{{model.DisplayHoverBox$}}">
+            <div slot="kitchensink/lazyLoading-message-box" class="kitchensink-lazy-loading__hover-box">
+                <p>{{model.SelectedPersonsName$}}'s Favorite game</p>
 
-                    <template is="dom-if" if="{{showLoadSpinner(model.DisplayedData.DataContent$)}}">
-                        <div class="kitchensink-lazy-loading__spinning-loading"></div>
-                    </template>
+                <template is="dom-if" if="{{showLoadSpinner(model.DisplayedData.DataContent$)}}">
+                    <div class="kitchensink-lazy-loading__spinning-loading"></div>
+                </template>
 
-                    <template is="dom-if" if="{{!showLoadSpinner(model.DisplayedData.DataContent$)}}">
-                        <p>{{model.DisplayedData.DataContent$}}</p>
-                    </template>
-                </div>
-            </template>
-        </div>
+                <template is="dom-if" if="{{!showLoadSpinner(model.DisplayedData.DataContent$)}}">
+                    <p>{{model.DisplayedData.DataContent$}}</p>
+                </template>
+            </div>
+        </template>
     </template>
     <script>
         (function () {

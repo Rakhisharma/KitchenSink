@@ -11,9 +11,8 @@
         </small>
 
         <h2 slot="kitchensink/fileupload-upload-file-header">Uploaded files</h2>
-        <div slot="kitchensink/fileupload-files-table">
             <template is="dom-if" if="{{model.Files.length}}">
-                <table>
+                <table slot="kitchensink/fileupload-files-table">
                     <thead>
                     <tr>
                         <th>Name</th>
@@ -35,11 +34,10 @@
                     </template>
                     </tbody>
                 </table>
-                <div>
+                <div slot="kitchensink/fileupload-files-table-message">
                     Do not forget to delete files from your temporary folder!
                 </div>
             </template>
-        </div>
         <div slot="kitchensink/fileupload-no-files-message">
             <template is="dom-if" if="{{!model.Files.length}}">
                 <p>No files uploaded so far</p>
@@ -47,32 +45,30 @@
         </div>
 
         <h2 slot="kitchensink/fileupload-uploading-header">Uploading files</h2>
-        <div slot="kitchensink/fileupload-uploading-table">
-            <template is="dom-if" if="{{model.Tasks.length}}">
-                <table>
-                    <thead>
+        <template is="dom-if" if="{{model.Tasks.length}}">
+            <table slot="kitchensink/fileupload-uploading-table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Size</th>
+                    <th>Progress</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <template is="dom-repeat" items="{{model.Tasks}}">
                     <tr>
-                        <th>Name</th>
-                        <th>Size</th>
-                        <th>Progress</th>
-                        <th></th>
+                        <td>{{item.FileName}}</td>
+                        <td>{{item.FileSizeString}}</td>
+                        <td>
+                            <span>{{item.Progress}}</span>%
+                        </td>
+                        <td>{{item.Message}}</td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <template is="dom-repeat" items="{{model.Tasks}}">
-                        <tr>
-                            <td>{{item.FileName}}</td>
-                            <td>{{item.FileSizeString}}</td>
-                            <td>
-                                <span>{{item.Progress}}</span>%
-                            </td>
-                            <td>{{item.Message}}</td>
-                        </tr>
-                    </template>
-                    </tbody>
-                </table>
-            </template>
-        </div>
+                </template>
+                </tbody>
+            </table>
+        </template>
         <div slot="kitchensink/fileupload-ongoing-message">
             <template is="dom-if" if="{{!model.Tasks.length}}">
                 <p>No ongoing uploads so far</p>
@@ -146,7 +142,10 @@
         <slot name="kitchensink/fileupload-description"></slot>
         <slot name="kitchensink/fileupload-warning"></slot>
         <slot name="kitchensink/fileupload-upload-file-header"></slot>
-        <slot name="kitchensink/fileupload-files-table"></slot>
+        <div>
+            <slot name="kitchensink/fileupload-files-table"></slot>
+            <slot name="kitchensink/fileupload-files-table-message"></slot>
+        </div>
         <slot name="kitchensink/fileupload-no-files-message"></slot>
         <slot name="kitchensink/fileupload-uploading-header"></slot>
         <slot name="kitchensink/fileupload-uploading-table"></slot>

@@ -16,12 +16,8 @@
         </paper-listbox>
 
         <p slot="kitchensink/radiolist-selected-label">Selected item:</p>
-
         <span slot="kitchensink/radiolist-selected-item-label" class="kitchensink-test-selected-item-label">{{model.SelectedItemLabel}}</span>
-
-        <div slot="kitchensink/radiolist-selected-item-index">
-            (<span>{{model.SelectedItemIndex$}}</span>)
-        </div>
+        <span slot="kitchensink/radiolist-selected-item-index">({{model.SelectedItemIndex$}})</span>
     </template>
     <template is="declarative-shadow-dom">
         <slot name="kitchensink/radiolist-heading"></slot>

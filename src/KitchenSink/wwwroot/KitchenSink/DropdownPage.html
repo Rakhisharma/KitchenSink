@@ -30,11 +30,9 @@
 
         <juicy-select slot="kitchensink/dropdown-objects-juicy-select" class="kitchensink-juicyselect kitchensink-test-juicy-select" caption-text="" value="{{model.SelectedProductKey$}}" options="{{model.Products}}" text-property="Name" value-property="Key"></juicy-select>
         
-        <div slot="kitchensink/dropdown-objects-select-label">
-            <template is="dom-if" if="{{model.SelectedProduct.Name}}">
-                <p class="kitchensink-test-juicy-select-label">You have selected: <strong>{{model.SelectedProduct.Name}}</strong></p>
-            </template>
-        </div>
+        <template is="dom-if" if="{{model.SelectedProduct.Name}}">
+            <p slot="kitchensink/dropdown-objects-select-label" class="kitchensink-test-juicy-select-label">You have selected: <strong>{{model.SelectedProduct.Name}}</strong></p>
+        </template>
     </template>
     <template is="declarative-shadow-dom">
         <style>
@@ -59,6 +57,8 @@
         <div class="kitchensink-dropdown-margin">
             <slot name="kitchensink/dropdown-objects-juicy-select"></slot>
         </div>
-        <slot name="kitchensink/dropdown-objects-select-label"></slot>
+        <div>
+            <slot name="kitchensink/dropdown-objects-select-label"></slot>
+        </div>
     </template>
 </template>
