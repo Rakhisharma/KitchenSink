@@ -69,7 +69,7 @@ html {
 }
 
 body {
-  color: #606c76;
+  color: var(--dark, #141D26);
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 14px;
   letter-spacing: .01em;
@@ -100,6 +100,7 @@ input[type='submit'] {
   height: 32px;
   cursor: pointer;
   box-sizing: border-box;
+  white-space: nowrap;
 }
 
 button:hover,
@@ -211,13 +212,13 @@ select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: transparent;
-  border: 0.1rem solid #d1d1d1;
-  border-radius: .4rem;
+  background-color: var(--white-smoke);
+  border: none;
   box-shadow: none;
   box-sizing: border-box;
-  height: 3.8rem;
-  padding: .6rem 1.0rem;
+  height: 38px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 input[type='email']:focus,
@@ -229,7 +230,6 @@ input[type='text']:focus,
 input[type='url']:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--primary);
   outline: 0;
 }
 
@@ -367,11 +367,6 @@ td:first-child {
 td:first-child,
 th:first-child {
   padding-left: 40px;
-}
-
-td:last-child,
-th:last-child {
-  padding-right: 0;
 }
 
 td:last-child {
