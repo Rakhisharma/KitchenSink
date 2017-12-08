@@ -31,8 +31,8 @@
   --gray-dark: #343a40;
 
   --default: var(--light);
-  --primary: var(--blue);
-  --secondary: var(--blue-dark);
+  --primary: var(--blue-dark);
+  --secondary: var(--blue);
   --success: var(--green);
   --danger: var(--red);
   --info: var(--cyan);
@@ -94,16 +94,12 @@ input[type='submit'] {
   background-color: var(--white, #FFF);
   border: 0.1rem solid var(--mouse, #000);
   color: var(--dark, #000);
-  border-radius: .4rem;
-  padding: 8px 15px;
+  border-radius: 2px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 32px;
   cursor: pointer;
-  display: inline-block;
-  height: inherit;
-  line-height: 1.5rem;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-
+  box-sizing: border-box;
 }
 
 button:hover,
@@ -337,19 +333,49 @@ table {
 
 td,
 th {
-  border-bottom: 0.1rem solid #e1e1e1;
   padding: 1.2rem 1.5rem;
   text-align: left;
 }
 
+tbody > tr:first-child > td:first-child {
+  border-top-left-radius: 3px;
+}
+
+tbody > tr:first-child > td:last-child {
+  border-top-right-radius: 3px;
+}
+
+tbody > tr:last-of-type > td:first-child {
+  border-bottom-left-radius: 3px;
+}
+
+tbody > tr:last-of-type > td:last-child {
+  border-bottom-right-radius: 3px;
+}
+
+td {
+  border-top: 0.1rem solid #e1e1e1;
+}
+
+tbody > tr:last-of-type > td {
+  border-bottom: 0.1rem solid #e1e1e1;
+}
+td:first-child {
+  border-left: 0.1rem solid #e1e1e1;
+}
+
 td:first-child,
 th:first-child {
-  padding-left: 0;
+  padding-left: 40px;
 }
 
 td:last-child,
 th:last-child {
   padding-right: 0;
+}
+
+td:last-child {
+  border-right: 0.1rem solid #e1e1e1;
 }
 
 b,
