@@ -1,63 +1,59 @@
+using System;
+using System.Threading.Tasks;
+using Joozek78.Star.Async;
 using Starcounter;
 
 namespace KitchenSink
 {
     partial class ProgressBarPage : Json
     {
-        protected override void OnData()
-        {
-            base.OnData();
-        }
-
-        void Handle(Input.StartProgressTrigger action)
+        private void Handle(Input.StartProgressTrigger action)
         {
             if (this.TaskIsRunnning)
             {
                 return;
             }
 
+            AsyncInputHandlers.Run(StartSimpleProgressBarAsync);
+        }
+
+        private async Task StartSimpleProgressBarAsync()
+        {
+            // Set up view-model properties
             this.Progress = 0;
             this.TaskIsRunnning = true;
-            StartSimpleProgressBar(30, Session.Current.SessionId);
-        }
-
-        void StartSimpleProgressBar(int delay, string sessionId)
-        {
-            long tempProgress = this.Progress;
             this.FileDownloadText = "Downloading File";
-            
-            Scheduling.ScheduleTask(() =>
-            {
-                while (tempProgress < 100)
-                {
-                    System.Threading.Thread.CurrentThread.Join(delay); // sleep function - handles the delay between the incrementation of this.Progress
-                    tempProgress++;
-                    SimpleProgressUpdate(sessionId, tempProgress);
-                }
-            }, false); // Wait for completion - If false: it will continue to run the script even though the scheduled task is running in the background
+
+            // Set up progress reports. They will be executed on Starcounter Scheduler
+            IProgress<long> progress = new Progress<long>(SimpleProgressUpdate);
+
+            // Fire the background task
+            await Task.Run(() => PerformBackgroundJobAsync(progress));
+
+            // After the background task is completed, clean up - back on Starcounter Sheduler
+            this.FileDownloadText = "Download Complete";
+            this.DownloadButtonText = "Download another (imaginary) file!";
+            this.TaskIsRunnning = false;
         }
 
-        void SimpleProgressUpdate(string sessionId, long progress)
+        private async Task PerformBackgroundJobAsync(IProgress<long> progress)
         {
-            Session.ScheduleTask(sessionId, (session, id) =>
+            // This method is executed on a Thread Pool. It doesn't block the Starcounter Scheduler
+            long tempProgress = 0;
+            while (tempProgress < 100)
             {
-                // The session might be disposed if user disconnects before the task has change to execute
-                if (session == null)
-                {
-                    return;
-                }
+                await Task.Delay(TimeSpan.FromMilliseconds(30))
+                    .ConfigureAwait(false);
+                tempProgress++;
 
-                this.Progress = progress;
+                // Progress class takes care that SimpleProgressUpdate method is called on Starcounter Scheduler
+                progress.Report(tempProgress);
+            }
+        }
 
-                if (this.Progress >= 100)
-                {
-                    this.FileDownloadText = "Download Complete";
-                    this.DownloadButtonText = "Download another (imaginary) file!";
-                    this.TaskIsRunnning = false;
-                }
-
-                session.CalculatePatchAndPushOnWebSocket();
-            });
+        private void SimpleProgressUpdate(long progress)
+        {
+            this.Progress = progress;
         }
     }
 }
