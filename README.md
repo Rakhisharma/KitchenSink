@@ -10,11 +10,11 @@ Features:
 
 The guidelines for this project are:
 
-- ❌ Do not have styles or HTML classes that pollute the light DOM.
-- ✔️ Only use native HTML without classes in the light DOM. Style them in Shadow DOM.
-- ❌ Do not have JavaScript that pollutes the global scope.
-- ✔️ Minimize the client side logic. For interactivity use external custom elements installed via Bower.
-- ✔️ Make use of external libraries in C# installed via NuGet.
+- ❌ **Do not** put styles or HTML classes in the light DOM because they pollute the global scope.
+- ✔️ Put unstyled HTML and custom elements in the light DOM and style them in the Shadow DOM.
+- ❌ **Do not** keep application logic in JavaScript, especially avoid JavaScript that pollutes the global scope.
+- ✔️ Keep presentation logic in custom elements. Install external custom elements via Bower.
+- ✔️ Use external libraries in C# when helpful. Install them via NuGet.
 
 It is recommended to follow these guidelines for Starcounter apps in general.
 
