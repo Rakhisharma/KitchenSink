@@ -2,17 +2,9 @@
 
 Shows how to model different UI patterns in JSON:
 
-| String  | Number  | Boolean | Object  | Array  | Custom  |
-|---|---|---|---|---|---|
-|  Text |  Integer | Checkbox  |  Nested partials | Radio  | File upload  |
-| Password  |  Decimal | Togglebutton  |   | Dropdown  | Set a cookie  |
-| Textarea  |  Button |   |   |  Radiolist | Dialog box  |
-| Markdown  | Map  |   |   | Multiselect  |  Callback behavior |
-| Html  |   |   |   | Table  | Autocomplete  |
-| Datepicker  |   |   |   | Datagrid  | Progress bar  |
-| Url  |   |   |   |  Chart |  Lazy loading |
-| Redirect  |   |   |   | Breadcrumb  | Pagination  |
-| Validation  |   |   |   |   | Flash Message  |
+- Rendering (Breadcrumb, Chart, Datagrid, HTML, Link, Map, Markdown, Pagination, Table)
+- Server Push (Async Response, Cookies, Dialog Box, Flash Message, Lazy Loading, Nested Views, Progress Bar, Redirect, Client Local State)
+- User Input (Autocomplete, Button, Checkbox, Datepicker, Dropdown, Decimal Input, File Upload, Integer Input, Multiselect, Password, Radio Button, Radiolist, Text Input, Textarea, Toggle Button, Validation)
 
 ## Requirements
 
