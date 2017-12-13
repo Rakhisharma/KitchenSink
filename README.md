@@ -1,10 +1,22 @@
 # KitchenSink
 
-Shows how to model different UI patterns in JSON:
+Present typical UI patterns in a form that is easy to apply in any Starcounter app.
+
+Features:
 
 - Rendering (Breadcrumb, Chart, Datagrid, HTML, Link, Map, Markdown, Pagination, Table)
 - Server Push (Async Response, Cookies, Dialog Box, Flash Message, Lazy Loading, Nested Views, Progress Bar, Redirect, Client Local State)
 - User Input (Autocomplete, Button, Checkbox, Datepicker, Dropdown, Decimal Input, File Upload, Integer Input, Multiselect, Password, Radio Button, Radiolist, Text Input, Textarea, Toggle Button, Validation)
+
+The guidelines for this project are:
+
+- ❌ Do not have styles or HTML classes that pollute the light DOM.
+- ✔️ Only use native HTML without classes in the light DOM. Style them in Shadow DOM.
+- ❌ Do not have JavaScript that pollutes the global scope.
+- ✔️ Minimize the client side logic. For interactivity use external custom elements installed via Bower.
+- ✔️ Make use of external libraries in C# installed via NuGet.
+
+It is recommended to follow these guidelines for Starcounter apps in general.
 
 ## Requirements
 
