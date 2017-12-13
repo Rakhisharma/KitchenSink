@@ -7,7 +7,7 @@
         <p slot="kitchensink/flashMessage-description">By pressing the buttons below, you will trigger a message to be displayed for 3 seconds. It is possible to trigger a message both from the server side, and the client side!</p>
         <p slot="kitchensink/flashMessage-dom-if-description">By using <code>&lt;template is="dom-if"&gt;</code> it is possible to hide or show an element in the HTML depending on the result of the if-statement.</p>
 
-        <p slot="kitchensink/flashMessage-schedule-task-description">And if you combine that with <code>Scheduling.ScheduleTask</code> and <code>Session.ScheduleTask</code> you can make a server side message appear.</p>
+        <p slot="kitchensink/flashMessage-schedule-task-description">And if you combine that with <code>AsyncInputHandlers.Run</code> and <code>Task.Delay</code> you can make a server side message appear for 3 seconds.</p>
 
         <button slot="kitchensink/flashMessage-server-button" class="btn btn-default" value="{{model.ShowMessageTrigger$::click}}" onmousedown="++this.value">Trigger message from Server side</button>
 
