@@ -2,10 +2,10 @@
     <template is="dom-bind">
         <h1 slot="kitchensink/progressBar-heading" class="kitchensink-heading-1">Progress Bar</h1>
 
-        <p slot="kitchensink/progressBar-description"> This example demonstrates how to run expensive tasks in the background. The key feature here is that the session does not get locked while these tasks are running, 
+        <p slot="kitchensink/progressBar-description">This example demonstrates how to run expensive tasks in the background. The key feature here is that the session does not get locked while these tasks are running, 
             and is continually updated throughout the progression of the task. </p>
 
-        <p slot="kitchensink/progressBar-read-more"> Read more about <code>Scheduling.ScheduleTask</code> and <code>Session.ScheduleTask</code> on starcounter.io - <a href="http://starcounter.io/guides/transactions/running-background-jobs/">Running background jobs</a>. </p>
+        <p slot="kitchensink/progressBar-read-more"> Read more about <code><a href="https://github.com/joozek78/starcounter-async">AsyncInputHandlers.Run</a></code> and <code><a href="https://blogs.msdn.microsoft.com/dotnet/2012/06/06/async-in-4-5-enabling-progress-and-cancellation-in-async-apis/">Progress</a></code>.</p>
        
         <div slot="kitchensink/progressBar-progress-bar" class="kitchensink-progress-bar__container">
             <span class="kitchensink-progress-bar__percentages"> {{model.Progress}}% </span>

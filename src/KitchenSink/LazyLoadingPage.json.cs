@@ -1,6 +1,8 @@
 using Starcounter;
 using System.Threading;
 using System;
+using System.Threading.Tasks;
+using Joozek78.Star.Async;
 
 namespace KitchenSink
 {
@@ -39,13 +41,7 @@ namespace KitchenSink
             protected int minDataRetrievalDelay = 300;
             protected int maxDataRetrievalDelay = 1000;
 
-            public LazyLoadingPage ParentPage
-            {
-                get
-                {
-                    return this.Parent.Parent as LazyLoadingPage;
-                }
-            }
+            public LazyLoadingPage ParentPage => this.Parent.Parent as LazyLoadingPage;
 
             // IsHovered is set on the client side. Every time a person gets hovered, isHovered is set to 1.
             // And the value is set to 0 on blur.
@@ -54,46 +50,44 @@ namespace KitchenSink
                 if (!this.DataIsLoaded && action.Value != 0)
                 {
                     Random rnd = new Random();
-                    StartDataRetrieval(rnd.Next(minDataRetrievalDelay, maxDataRetrievalDelay), Session.Current.SessionId);
+                    AsyncInputHandlers.Run(() => StartDataRetrieval(rnd.Next(minDataRetrievalDelay, maxDataRetrievalDelay)));
+                }
+
+            }
+
+            private async Task StartDataRetrieval(int delayMilliseconds)
+            {
+                // This method is called on Starcounter Scheduler, using Session associated with this view-model
+
+                // Read FirstName property while we still have access to Session
+                var firstName = this.FirstName;
+
+                // Schedule data retrieval on Starcounter Scheduler. RetrieveDataFromFakeDataBase will be executed on a Starcounter Scheduler,
+                // but without access to the Session associated with this view-model. It will have access to DB, but won't block this view-model's updates
+                string data = null;
+                await Scheduling.RunTask(() => data = RetrieveDataFromFakeDataBase(TimeSpan.FromMilliseconds(delayMilliseconds), firstName));
+
+                // Use freshly-retrieved data to change the UI
+                DataRetrievalUpate(data);
+            }
+
+            private void DataRetrievalUpate(string data)
+            {
+                this.DataIsLoaded = true;
+                this.DataToShow = data;
+                this.FavoriteGame = data;
+
+                if (this.IsHovered == 1)
+                {
+                    this.ParentPage.DisplayedData.DataContent = data;
                 }
             }
 
-            void StartDataRetrieval(int delay, string sessionId)
-            {
-                Scheduling.ScheduleTask(() =>
-                {
-                    string data = this.RetrieveDataFromFakeDataBase(this.FirstName);
-
-                    Thread.CurrentThread.Join(delay);
-                    DataRetrievalUpate(sessionId, data);
-                }, false); // wait for completion: false = run in background.
-            }
-
-            void DataRetrievalUpate(string sessionId, string data)
-            {
-                Session.ScheduleTask(sessionId, (session, id) =>
-                {
-                    if (session == null)
-                    {
-                        return;
-                    }
-
-                    this.DataIsLoaded = true;
-                    this.DataToShow = data;
-                    this.FavoriteGame = data;
-
-                    if (this.IsHovered == 1)
-                    {
-                        this.ParentPage.DisplayedData.DataContent = data;
-                    }
-
-                    session.CalculatePatchAndPushOnWebSocket();
-                });
-            }
-
             // Acts as a fake database, and provide each person with a favorite game
-            public string RetrieveDataFromFakeDataBase(string firstName)
+            public string RetrieveDataFromFakeDataBase(TimeSpan delay, string firstName)
             {
+                // simulate work
+                Thread.Sleep(delay);
                 switch (firstName)
                 {
                     case "Alicia":
