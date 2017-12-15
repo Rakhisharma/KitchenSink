@@ -1,18 +1,22 @@
 # KitchenSink
 
-Shows how to model different UI patterns in JSON:
+Present typical UI patterns in a form that is easy to apply in any Starcounter app.
 
-| String  | Number  | Boolean | Object  | Array  | Custom  |
-|---|---|---|---|---|---|
-|  Text |  Integer | Checkbox  |  Nested partials | Radio  | File upload  |
-| Password  |  Decimal | Togglebutton  |   | Dropdown  | Set a cookie  |
-| Textarea  |  Button |   |   |  Radiolist | Dialog box  |
-| Markdown  | Map  |   |   | Multiselect  |  Callback behavior |
-| Html  |   |   |   | Table  | Autocomplete  |
-| Datepicker  |   |   |   | Datagrid  | Progress bar  |
-| Url  |   |   |   |  Chart |  Lazy loading |
-| Redirect  |   |   |   | Breadcrumb  | Pagination  |
-| Validation  |   |   |   |   | Flash Message  |
+Features:
+
+- Rendering (Breadcrumb, Chart, Datagrid, HTML, Link, Map, Markdown, Pagination, Table)
+- Server Push (Async Response, Cookies, Dialog Box, Flash Message, Lazy Loading, Nested Views, Progress Bar, Redirect, Client Local State)
+- User Input (Autocomplete, Button, Checkbox, Datepicker, Dropdown, Decimal Input, File Upload, Integer Input, Multiselect, Password, Radio Button, Radiolist, Text Input, Textarea, Toggle Button, Validation)
+
+The guidelines for this project are:
+
+- ❌ **Do not** put styles or HTML classes in the light DOM because they pollute the global scope.
+- ✔️ Put unstyled HTML and custom elements in the light DOM and style them in the Shadow DOM.
+- ❌ **Do not** keep application logic in JavaScript, especially avoid JavaScript that pollutes the global scope.
+- ✔️ Keep presentation logic in custom elements. Install external custom elements via Bower.
+- ✔️ Use external libraries in C# when helpful. Install them via NuGet.
+
+It is recommended to follow these guidelines for Starcounter apps in general.
 
 ## Requirements
 
