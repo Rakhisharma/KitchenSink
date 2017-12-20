@@ -67,7 +67,7 @@
     <script>
         (function () {
             var script = document._currentScript || document.currentScript;
-            var template = script.previousElementSibling;
+            var template = Polymer.Element ? script.previousElementSibling : script.previousElementSibling.firstElementChild;
 
             template.onEnableCarrotEngineClick = function () {
                 template.set("model.EnableCarrotEngine$", !template.model.EnableCarrotEngine$);
