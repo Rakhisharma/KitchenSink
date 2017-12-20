@@ -1,5 +1,5 @@
-﻿<template>
-    <template is="dom-bind">
+<template>
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/decimal-heading" class="kitchensink-heading-1">Decimal Input</h1>
         
         <p slot="kitchensink/decimal-description">JSON's primitive value type <code>number</code> can be mapped directly to HTML form elements <code>input type="number"</code>.
@@ -10,8 +10,8 @@
 
         <label slot="kitchensink/decimal-label" class="control-label">{{model.PriceReaction}}</label>
 
-        <input slot="kitchensink/decimal-input" type="number" step="0.01" value="{{model.Price$::input}}" placeholder="Price" class="form-control"/>
-    </template>
+        <input slot="kitchensink/decimal-input" type="number" step="0.01" value="{{model.Price$::input}}" placeholder="Price" class="form-control">
+    </template></dom-bind>
     <template is="declarative-shadow-dom">
         <slot name="kitchensink/decimal-heading"></slot>
         <slot name="kitchensink/decimal-description"></slot>

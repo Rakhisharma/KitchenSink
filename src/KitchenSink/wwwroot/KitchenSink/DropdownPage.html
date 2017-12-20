@@ -1,7 +1,7 @@
-﻿<link rel="import" href="/sys/juicy-select/juicy-select.html" />
+<link rel="import" href="/sys/juicy-select/juicy-select.html">
 
 <template>
-    <template is="dom-bind">
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/dropdown-heading" class="kitchensink-heading-1">Dropdown</h1>
         <h2 slot="kitchensink/dropdown-primitive-array-heading" class="kitchensink-heading-2">Primitive array</h2>
         <p slot="kitchensink/dropdown-pets-description">A combination of JSON's primitive value types <code>array</code>, <code>object</code> and <code>number</code> can be mapped to an HTML <code>select</code> element.</p>
@@ -35,7 +35,7 @@
                 <p class="kitchensink-test-juicy-select-label">You have selected: <strong>{{model.SelectedProduct.Name}}</strong></p>
             </template>
         </div>
-    </template>
+    </template></dom-bind>
     <template is="declarative-shadow-dom">
         <style>
             .kitchensink-dropdown-margin {

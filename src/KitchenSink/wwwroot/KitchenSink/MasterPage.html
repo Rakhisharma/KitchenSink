@@ -1,9 +1,9 @@
-﻿<link rel="stylesheet" href="/KitchenSink/style.css">
+<link rel="stylesheet" href="/KitchenSink/style.css">
 <template>
-    <template id="root" is="dom-bind">
+    <dom-bind><template id="root" is="dom-bind">
         <starcounter-include slot="kitchensink/nav" view-model="{{model.NavPage}}"></starcounter-include>
         <starcounter-include slot="kitchensink/current" view-model="{{model.CurrentPage}}"></starcounter-include>
-    </template>
+    </template></dom-bind>
     <template is="declarative-shadow-dom">
         <style>
             .kitchensink-layout {

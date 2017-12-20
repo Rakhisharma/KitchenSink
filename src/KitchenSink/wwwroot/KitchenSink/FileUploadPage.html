@@ -1,12 +1,12 @@
-﻿<link href="/sys/starcounter-upload/starcounter-upload.html" rel="import" />
+<link href="/sys/starcounter-upload/starcounter-upload.html" rel="import">
 
 <template>
-    <template is="dom-bind">
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/fileupload-heading" class="kitchensink-heading-1">File Upload</h1>
 
         <p slot="kitchensink/fileupload-description">Upload big files with <a href="https://github.com/Starcounter/starcounter-upload/"><code>starcounter-upload</code></a> over WebSocket</p>
 
-        <small  slot="kitchensink/fileupload-warning">
+        <small slot="kitchensink/fileupload-warning">
             <b>Warning:</b> this example requires <code>Polymer 1.3.1</code> which comes with <code>Starcounter 2.1.1367</code> or higher.
         </small>
 
@@ -79,7 +79,7 @@
             </template>
         </div>
 
-        <starcounter-upload slot="kitchensink/fileupload-upload" session-id="{{model.SessionId}}" upload-url="{{model.UploadUrl}}" tasks="{{tasks}}" multiple auto-upload></starcounter-upload>
+        <starcounter-upload slot="kitchensink/fileupload-upload" session-id="{{model.SessionId}}" upload-url="{{model.UploadUrl}}" tasks="{{tasks}}" multiple="" auto-upload=""></starcounter-upload>
 
         <button slot="kitchensink/fileupload-select-button" type="button" class="btn btn-sm btn-primary" on-click="selectFile">Select file</button>
 
@@ -118,7 +118,7 @@
                 </div>
             </template>
         </div>
-    </template>
+    </template></dom-bind>
     <script>
         (function () {
             var script = document._currentScript || document.currentScript;

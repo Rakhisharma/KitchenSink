@@ -1,7 +1,7 @@
-﻿<link href="/sys/paper-dialog/paper-dialog.html" rel="import" />
+<link href="/sys/paper-dialog/paper-dialog.html" rel="import">
 
 <template>
-    <template is="dom-bind">
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/dialog-heading" class="kitchensink-heading-1">Dialog Box</h1>
 
         <p slot="kitchensink/dialog-description">Modal dialog box example</p>
@@ -18,12 +18,12 @@
                 </p>
             </div>
             <div class="buttons">
-                <button class="btn btn-sm btn-default" dialog-dismiss value="{{model.RejectTrigger$::click}}" onmousedown="++this.value;">Reject</button>
+                <button class="btn btn-sm btn-default" dialog-dismiss="" value="{{model.RejectTrigger$::click}}" onmousedown="++this.value;">Reject</button>
                 <span>&nbsp;</span>
-                <button class="btn btn-sm btn-primary" dialog-confirm autofocus value="{{model.ConfirmTrigger$::click}}" onmousedown="++this.value;">Accept</button>
+                <button class="btn btn-sm btn-primary" dialog-confirm="" autofocus="" value="{{model.ConfirmTrigger$::click}}" onmousedown="++this.value;">Accept</button>
             </div>
         </paper-dialog>
-    </template>
+    </template></dom-bind>
     <template is="declarative-shadow-dom">
         <slot name="kitchensink/dialog-heading"></slot>
         <slot name="kitchensink/dialog-description"></slot>

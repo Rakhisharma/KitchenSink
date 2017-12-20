@@ -1,7 +1,7 @@
-﻿<link rel="import" href="/sys/polymer/polymer.html">
+<link rel="import" href="/sys/polymer/polymer.html">
 
 <template>
-    <template is="dom-bind">
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/lazyLoading-heading" class="kitchensink-heading-1">Lazy Loading</h1>
 
         <p slot="kitchensink/lazyLoading-scheduling-description"> By using <code>Scheduling.RunTask</code> it is possible to achieve asynchronous data loading. </p>
@@ -45,7 +45,7 @@
                 </div>
             </template>
         </div>
-    </template>
+    </template></dom-bind>
     <script>
         (function () {
             var script = document._currentScript || document.currentScript;

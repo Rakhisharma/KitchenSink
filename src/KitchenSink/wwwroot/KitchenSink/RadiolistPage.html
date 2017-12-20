@@ -1,8 +1,8 @@
-﻿<link rel="import" href="/sys/paper-listbox/paper-listbox.html" />
-<link rel="import" href="/sys/paper-item/paper-item.html" />
+<link rel="import" href="/sys/paper-listbox/paper-listbox.html">
+<link rel="import" href="/sys/paper-item/paper-item.html">
 
 <template>
-    <template is="dom-bind">
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/radiolist-heading" class="kitchensink-heading-1">Radiolist</h1>
 
         <p slot="kitchensink/radiolist-description">A combination of JSON's primitive value types <code>array</code>, <code>object</code> and <code>number</code> can be mapped to a multiselect control.</p>
@@ -22,7 +22,7 @@
         <div slot="kitchensink/radiolist-selected-item-index">
             (<span>{{model.SelectedItemIndex$}}</span>)
         </div>
-    </template>
+    </template></dom-bind>
     <template is="declarative-shadow-dom">
         <slot name="kitchensink/radiolist-heading"></slot>
         <slot name="kitchensink/radiolist-description"></slot>
