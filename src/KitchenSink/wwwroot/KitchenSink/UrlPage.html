@@ -1,5 +1,5 @@
-﻿<template>
-    <template is="dom-bind">
+<template>
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/url-heading" class="kitchensink-heading-1">Link</h1>
 
         <p slot="kitchensink/url-description">JSON's primitive value type <code>string</code> can be mapped directly to HTML <code>a href=""</code>.</p>
@@ -15,7 +15,7 @@
         <a slot="kitchensink/url-link-iframe-targetted" target="link-target" href="{{model.Url}}">iframe-targetted: {{model.Label}}</a>
         <iframe slot="kitchensink/url-targeted-iframe" id="link-target" name="link-target"></iframe>
 
-    </template>
+    </template></dom-bind>
     <template is="declarative-shadow-dom">
         <slot name="kitchensink/url-heading"></slot>
         <div>

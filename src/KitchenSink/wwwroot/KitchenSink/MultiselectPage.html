@@ -1,13 +1,13 @@
-﻿<link rel="import" href="/sys/juicy-select/juicy-select.html" />
+<link rel="import" href="/sys/juicy-select/juicy-select.html">
 
 <template>
-    <template is="dom-bind">
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/multiselect-heading" class="kitchensink-heading-1">Multiselect</h1>
 
         <p slot="kitchensink/multiselect-description">Array of json items in combination with <code>juicy-select</code> can be used as a simple select element with multi select option.</p>
         <p slot="kitchensink/multiselect-countries-multiselect">
             <span>Select countries you have visited:</span>
-            <br />
+            <br>
             <juicy-select class="kitchensink-juicyselect" multiple="true" options="{{model.Countries}}" selected-property="Selected$" text-property="Name" value-property="Name">
                 <select class="form-control" multiple></select>
             </juicy-select>
@@ -28,7 +28,7 @@
         <p slot="kitchensink/multiselect-favorite-label">
             Your favorite country is: <span>{{model.FavoriteCountry$}}</span>
         </p>
-    </template>
+    </template></dom-bind>
     <template is="declarative-shadow-dom">
         <slot name="kitchensink/multiselect-heading"></slot>
         <slot name="kitchensink/multiselect-description"></slot>

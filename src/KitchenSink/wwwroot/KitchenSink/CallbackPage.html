@@ -1,5 +1,5 @@
-﻿<template>
-    <template is="dom-bind">
+<template>
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/callback-heading" class="kitchensink-heading-1">Async Response</h1>
 
         <p slot="kitchensink/callback-description">
@@ -108,11 +108,11 @@
                 </template>
             </tbody>
         </table>
-    </template>
+    </template></dom-bind>
     <script>
         (function () {
             var script = document._currentScript || document.currentScript;
-            var template = script.previousElementSibling;
+            var template = Polymer.Element ? script.previousElementSibling : script.previousElementSibling.firstElementChild;
 
             template.local = {
                 InfoMessage$: "",

@@ -1,7 +1,7 @@
-﻿<link rel="import" href="/sys/polymer/polymer.html">
+<link rel="import" href="/sys/polymer/polymer.html">
 
 <template>
-    <template is="dom-bind">
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/flashMessage-heading" class="kitchensink-heading-1">Flash Message</h1>
         
         <p slot="kitchensink/flashMessage-description">By pressing the buttons below, you will trigger a message to be displayed for 3 seconds. It is possible to trigger a message both from the server side, and the client side!</p>
@@ -24,11 +24,11 @@
                 <p class="alert alert-warning">{{model.ClientMessage$}} </p>
             </template>
         </div>
-    </template>
+    </template></dom-bind>
     <script>
         (function () {
             var script = document._currentScript || document.currentScript;
-            var template = script.previousElementSibling;
+            var template = Polymer.Element ? script.previousElementSibling : script.previousElementSibling.firstElementChild;
 
             template.showMessage = function () {
                 template.set("model.ClientMessage$", "This message was set on the Client Side!");

@@ -1,16 +1,12 @@
-﻿<link rel="import" href="/sys/polymer/polymer.html">
+<link rel="import" href="/sys/polymer/polymer.html">
 <link rel="import" href="/sys/juicy-select/juicy-select.html">
 
 <template>
-    <template is="dom-bind">
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/pagination-heading" class="kitchensink-heading-1">Pagination</h1>
         
         <p slot="kitchensink/pagination-description">Pagination can be implemented in the code-behind by using <code>FETCH</code> to determine how many entries there should be on every page and <code>OFFSET</code> to retrieve the right entries</p>
-        <juicy-select slot="kitchensink/pagination-juicy-select-items-per-page" class="kitchensink-juicyselect dropdown kitchensink-test-juicy-select"
-                        value="{{model.EntriesPerPage$::change}}"
-                        options="{{model.PageEntries}}"
-                        text-property="Text"
-                        value-property="Amount">
+        <juicy-select slot="kitchensink/pagination-juicy-select-items-per-page" class="kitchensink-juicyselect dropdown kitchensink-test-juicy-select" value="{{model.EntriesPerPage$::change}}" options="{{model.PageEntries}}" text-property="Text" value-property="Amount">
         </juicy-select>
         <table class="table">
             <thead>
@@ -51,11 +47,11 @@
             </ul>
         </nav>
         <p slot="kitchensink/pagination-page-number" class="kitchensink-test-pagination-label">page {{model.CurrentPage}} of {{model.TotalPages}}</p>
-    </template>
+    </template></dom-bind>
     <script>
         (function () {
             var script = document._currentScript || document.currentScript;
-            var template = script.previousElementSibling;
+            var template = Polymer.Element ? script.previousElementSibling : script.previousElementSibling.firstElementChild;
 
             triggerModelAction = function (prop) {
                 template.set("model." + prop, parseInt(template.get("model." + prop), 10) + 1);
