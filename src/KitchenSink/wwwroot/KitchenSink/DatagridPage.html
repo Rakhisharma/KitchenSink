@@ -24,7 +24,7 @@
         <hot-table slot="kitchensink/datagrid-table" datarows="{{model.Pets}}">
             <hot-column value="Name$" header="Name"></hot-column>
             <hot-column value="Kind$" header="Kind"></hot-column>
-            <hot-column value="Feature" header="Feature" read-only=""></hot-column>
+            <hot-column value="Feature" header="Feature" read-only></hot-column>
         </hot-table>
         <button slot="kitchensink/datagrid-button" class="btn btn-sm btn-default" value="{{model.AddPetTrigger$::click}}" onmousedown="++this.value">Add a pet</button>
     </template></dom-bind>
