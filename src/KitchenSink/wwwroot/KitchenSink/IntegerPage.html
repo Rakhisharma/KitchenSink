@@ -1,5 +1,5 @@
 <template>
-    <template is="dom-bind">
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/integer-heading" class="kitchensink-heading-1">Integer Input</h1>
 
         <p slot="kitchensink/integer-description">JSON's primitive value type <code>number</code> can be mapped directly to HTML form elements <code>input type="number"</code>.</p>
@@ -9,7 +9,7 @@
         <label slot="kitchensink/integer-label" class="control-label">{{model.AgeReaction}}</label>
 
         <input slot="kitchensink/integer-input" type="number" value="{{model.Age$::input}}" placeholder="Age" class="form-control">
-    </template>
+    </template></dom-bind>
     <template is="declarative-shadow-dom">
         <slot name="kitchensink/integer-heading"></slot>
         <slot name="kitchensink/integer-description"></slot>

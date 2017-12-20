@@ -1,5 +1,5 @@
-﻿<template>
-    <template is="dom-bind">
+<template>
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/cookie-heading" class="kitchensink-heading-1">Cookies</h1>
         <p slot="kitchensink/cookie-description">
             This page sets a cookie when you load it. Check <code>/KitchenSink/cookie</code> handler in <code>Program.cs</code> class for source code.
@@ -11,7 +11,7 @@
             Client side cookie: <strong>{{getCookie()}}</strong>
         </p>
         <button slot="kitchensink/cookie-button" type="button" class="btn btn-default btn-sm" on-click="reload">Reload this page and set a cookie</button>
-    </template>
+    </template></dom-bind>
     <script>
         (function () {
             function getCookie(name) {
@@ -21,7 +21,7 @@
             }
 
             var script = document._currentScript || document.currentScript;
-            var template = script.previousElementSibling;
+            var template = Polymer.Element ? script.previousElementSibling : script.previousElementSibling.firstElementChild;
 
             template.getCookie = function () {
                 return unescape(getCookie("KitchenSink")).replace(/[+]/gi, " ");

@@ -1,5 +1,5 @@
-﻿<template>
-    <template is="dom-bind">
+<template>
+    <dom-bind><template is="dom-bind">
         <h1 slot="kitchensink/progressBar-heading" class="kitchensink-heading-1">Progress Bar</h1>
 
         <p slot="kitchensink/progressBar-description">This example demonstrates how to run expensive tasks in the background. The key feature here is that the session does not get locked while these tasks are running, 
@@ -17,7 +17,7 @@
                 <span>{{model.FileDownloadText}}</span>
             </template>
         </p>
-    </template>
+    </template></dom-bind>
     <template is="declarative-shadow-dom">
         <slot name="kitchensink/progressBar-heading"></slot>
         <slot name="kitchensink/progressBar-description"></slot>
