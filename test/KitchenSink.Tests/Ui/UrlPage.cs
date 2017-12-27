@@ -17,7 +17,7 @@ namespace KitchenSink.Tests.Ui
         [FindsBy(How = How.XPath, Using = "//a[text() = 'Targetted: This a sample link']")]
         public IWebElement BlankTargettedLink { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//a[text() = 'With download attribute']")]
+        [FindsBy(How = How.XPath, Using = "//a[text() = 'Download SVG icon']")]
         public IWebElement LinkWithDownloadAttrib { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//a[text() = 'iframe-targetted: This a sample link']")]
