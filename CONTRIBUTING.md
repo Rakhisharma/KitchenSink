@@ -34,11 +34,11 @@ If it is not possible to make a fully hybrid change, please split the PR into tw
 
 ## Contributing code
 
-To contribute code to this repository, follow the instructions in the [guidelines](https://starcounter.gitbooks.io/guidelines/content/contributing-code.html).
+To contribute code to this repository, follow the instructions in the [guidelines](https://github.com/Starcounter/CompanyTrack/blob/master/AppsTeam/Guidelines/version_control/contributing_code.md).
 
 ## How to release a package
 
-To release the app to the warehouse, follow the instructions in the [guidelines](https://starcounter.gitbooks.io/guidelines/content/releasing-to-warehouse.html).
+To release the app to the warehouse, follow the instructions in the [guidelines](https://github.com/Starcounter/CompanyTrack/blob/master/AppsTeam/Guidelines/releasing-to-warehouse.md).
 
 ## Testing
 
