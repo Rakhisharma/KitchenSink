@@ -10,6 +10,10 @@
 
         <a slot="kitchensink/targeted-url-link" target="_black" href="{{model.Url}}">Targetted: {{model.Label}}</a>
 
+        <p slot="kitchensink/url-description-download-attrib">Setting <code>download</code> attribute disables Palindrom page morphing and instructs the browser to download a URL instead of navigating to it, as explained in <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank" rel="noopener">MDN</a>. The URL can be to a static file or to a HTTP GET handler in the app. In some browsers like Firefox, the URL has to be on the same domain for the download to be initiated.</p>
+
+        <a slot="kitchensink/download-attrib-link" download="KitchenSinkLogo.svg" href="/KitchenSink/images/KitchenSink.svg">Download SVG icon</a>
+
         <p slot="kitchensink/url-description-targeted-iframe">iframe targets are also supported</p>
 
         <a slot="kitchensink/url-link-iframe-targetted" target="link-target" href="{{model.Url}}">iframe-targetted: {{model.Label}}</a>
@@ -28,6 +32,12 @@
             <slot name="kitchensink/url-description-targeted"></slot>
             <p>
                 <slot name="kitchensink/targeted-url-link"></slot>
+            </p>
+        </div>
+        <div>
+            <slot name="kitchensink/url-description-download-attrib"></slot>
+            <p>
+                <slot name="kitchensink/download-attrib-link"></slot>
             </p>
         </div>
         <div>
