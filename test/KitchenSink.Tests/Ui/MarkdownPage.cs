@@ -20,8 +20,12 @@ namespace KitchenSink.Tests.Ui
 
         public string GetHeaderText()
         {
-            var shadowRoot = ExpandShadowRoot(Driver.FindElement(By.TagName("juicy-markdown"))); 
-            return shadowRoot.FindElement(By.TagName("h1")).Text; //BUG in CHROME b.getElementsByTagName is not a function
+            return GetJuicyMarkdown().Text;
+        }
+
+        private IWebElement GetJuicyMarkdown()
+        {
+            return GetElementByQuerySelector(By.TagName("juicy-markdown"), "h1");
         }
     }
 }
