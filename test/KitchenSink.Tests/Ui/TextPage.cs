@@ -54,12 +54,12 @@ namespace KitchenSink.Tests.Ui
 
         public IWebElement GetInputForPaperElement(IWebElement paperInput)
         {
-            return GetElementByQuerySelector(paperInput, "input");
+            return GetShadowElementByQuerySelector(paperInput, "input");
         }
 
         public IWebElement GetPaperInput(IWebElement paperElement, string id)
         {
-            return GetElementByQuerySelector(paperElement, $"#{id}");
+            return GetShadowElementByQuerySelector(paperElement, $"#{id}");
         }
     }
 }

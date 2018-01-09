@@ -25,7 +25,7 @@ namespace KitchenSink.Tests.Ui
 
         private IWebElement GetJuicyMarkdown()
         {
-            return GetElementByQuerySelector(By.TagName("juicy-markdown"), "h1");
+            return GetShadowElementByQuerySelector(By.TagName("juicy-markdown"), "h1");
         }
     }
 }

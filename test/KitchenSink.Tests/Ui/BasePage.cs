@@ -114,13 +114,13 @@ namespace KitchenSink.Tests.Ui
             return scriptResult;
         }
 
-        public IWebElement GetElementByQuerySelector(By elementSelector, string queryArgument)
+        public IWebElement GetShadowElementByQuerySelector(By elementSelector, string queryArgument)
         {
             var shadowRootElement = Driver.FindElement(elementSelector);
-            return GetElementByQuerySelector(shadowRootElement, queryArgument);
+            return GetShadowElementByQuerySelector(shadowRootElement, queryArgument);
         }
 
-        public IWebElement GetElementByQuerySelector(IWebElement shadowRootElement, string queryArgument)
+        public IWebElement GetShadowElementByQuerySelector(IWebElement shadowRootElement, string queryArgument)
         {
             var script = $"return arguments[0].shadowRoot.querySelector('{queryArgument}')";
             var webElement = (IWebElement)ExecuteScriptOnElement(shadowRootElement, script);

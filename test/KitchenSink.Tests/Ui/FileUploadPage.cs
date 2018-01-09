@@ -45,7 +45,7 @@ namespace KitchenSink.Tests.Ui
 
         private IWebElement GetFileElement()
         {
-            return GetElementByQuerySelector(By.XPath("//starcounter-upload"), "#fileElement");
+            return GetShadowElementByQuerySelector(By.XPath("//starcounter-upload"), "#fileElement");
         }
 
     }

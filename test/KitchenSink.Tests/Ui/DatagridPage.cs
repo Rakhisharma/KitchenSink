@@ -50,7 +50,7 @@ namespace KitchenSink.Tests.Ui
         {
             var td = GetCellsByText(searchText).First();
             DblClickOn(td);
-            var input = GetElementByQuerySelector(By.XPath("//hot-table"), "textarea.handsontableInput");
+            var input = GetShadowElementByQuerySelector(By.XPath("//hot-table"), "textarea.handsontableInput");
             input.Clear();
             input.SendKeys(newText);
             input.SendKeys(Keys.Enter);
@@ -63,7 +63,7 @@ namespace KitchenSink.Tests.Ui
 
         private IWebElement GetHtCore()
         {
-            return GetElementByQuerySelector(By.XPath("//hot-table"), ".htCore");
+            return GetShadowElementByQuerySelector(By.XPath("//hot-table"), ".htCore");
         }
     }
 }
