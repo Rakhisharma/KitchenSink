@@ -26,7 +26,12 @@ namespace KitchenSink.Tests.Utilities
                     }
                 case Config.Browser.Firefox:
                     {
-                        driver = new RemoteWebDriver(remoteWebDriverUri, new FirefoxOptions());
+                        FirefoxOptions profile = new FirefoxOptions();
+                        profile.SetPreference("browser.download.folderList", 2);
+                        profile.SetPreference("browser.helperApps.neverAsk.saveToDisk", "image/svg+xml");
+
+                        driver = new RemoteWebDriver(remoteWebDriverUri, profile);
+
                         break;
                     }
             }

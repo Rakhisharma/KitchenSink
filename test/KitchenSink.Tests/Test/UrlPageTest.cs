@@ -2,6 +2,7 @@
 using KitchenSink.Tests.Utilities;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using System.IO;
 
 namespace KitchenSink.Tests.Test
 {
@@ -81,6 +82,25 @@ namespace KitchenSink.Tests.Test
 
             // use the original page
             Driver.SwitchTo().Window(Driver.WindowHandles[0]);
+        }
+
+        [Test]
+        public void UrlPage_ClickLinkWithDownloadAttribute()
+        {
+            string downloadsDirPath = Path.Combine(System.Environment.GetEnvironmentVariable("USERPROFILE"), "Downloads");
+            string downloadedFilePath = Path.Combine(downloadsDirPath, "KitchenSinkLogo.svg");
+            FileInfo downloadedFile = new FileInfo(downloadedFilePath);
+
+            if(downloadedFile.Exists)
+            {
+                downloadedFile.Delete();
+            }
+
+            WaitUntil(x => _urlPage.LinkWithDownloadAttrib.Displayed);
+
+            _urlPage.ClickLinkWithDownloadAttrib();
+
+            WaitUntil(x => new FileInfo(downloadedFilePath).Exists);
         }
 
         [Test]
