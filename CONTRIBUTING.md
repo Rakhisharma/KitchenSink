@@ -2,19 +2,19 @@
 
 ## Branches
 
-This repo supports Starcounter 2.3.1 with Polymer 1 (`master` branch) and Starcounter 2.4.0 with Polymer 2 (`master-2.4` branch). The views in the repo are hybrid.
+This repo supports Starcounter 2.4.0 with Polymer 2 (`master-2.4` branch) and Starcounter 2.3.1 with Polymer 1 (`master` branch). The views in the repo are hybrid.
 
-All changes should be hybrid, made as a PR to the `master` branch. 
+All changes should be hybrid, made as a PR to the `master-2.4` branch. 
 
 The build server is configured to attempt testing the PR with Starcounter 2.3.1 and 2.4.0 automatically.
 
-The person who merges the PR to `master`, should also do the manual merge of `master` to `master-2.4` (that doesn't have to be a PR).
+The person who merges the PR to `master-2.4`, should also do the manual merge of `master-2.4` to `master`, but only if the TeamCity build is passing with Starcounter 2.3. This does not have to be a PR.
 
 The following diagram illustrates the typical workflow:
 
 ![](./docs/branches.png)
 
-If it is not possible to make a fully hybrid change, please split the PR into two parts - one hybrid part for `master` and one special part for `master-2.4`.
+If it is not possible to make a fully hybrid change, please split the PR into two parts - one common part for `master-2.4` and one special part for `master`.
 
 ## How to build and run
 
