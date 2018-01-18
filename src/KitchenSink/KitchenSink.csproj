@@ -119,6 +119,9 @@
     <Compile Include="ProgressBarPage.json.cs">
       <DependentUpon>ProgressBarPage.json</DependentUpon>
     </Compile>
+    <Compile Include="SortablePage.json.cs">
+    <DependentUpon>SortablePage.json</DependentUpon>
+    </Compile>
     <Compile Include="ValidationPage.json.cs">
       <DependentUpon>ValidationPage.json</DependentUpon>
     </Compile>
@@ -268,6 +271,7 @@
     <Content Include="wwwroot\KitchenSink\RadioPage.html" />
     <Content Include="wwwroot\KitchenSink\RedirectPage.html" />
     <Content Include="wwwroot\KitchenSink\TablePage.html" />
+    <Content Include="wwwroot\KitchenSink\SortablePage.html" />
     <Content Include="wwwroot\KitchenSink\TextareaPage.html" />
     <Content Include="wwwroot\KitchenSink\TextPage.html" />
     <Content Include="wwwroot\KitchenSink\style.css" />
@@ -340,6 +344,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypedJSON Include="TablePage.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
+  </ItemGroup>
+  <ItemGroup>
+    <TypedJSON Include="SortablePage.json">
       <Generator>MsBuild:Compile</Generator>
     </TypedJSON>
   </ItemGroup>

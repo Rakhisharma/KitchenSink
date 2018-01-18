@@ -85,6 +85,9 @@ namespace KitchenSink
             Handle.GET("/KitchenSink/partial/table", () => new TablePage());
             Handle.GET("/KitchenSink/table", () => WrapPage<TablePage>("/KitchenSink/partial/table"));
 
+            Handle.GET("/KitchenSink/partial/sortable", () => new SortablePage());
+            Handle.GET("/KitchenSink/sortable", () => WrapPage<SortablePage>("/KitchenSink/partial/sortable"));
+
             Handle.GET("/KitchenSink/partial/text", () => new TextPage());
             Handle.GET("/KitchenSink/text", () => WrapPage<TextPage>("/KitchenSink/partial/text"));
 
