@@ -17,11 +17,6 @@ namespace KitchenSink
 
             person = this.Persons.Add();
             person.Name = "Bella";
-
-            person = this.Persons.Add();
-            person.Name = "Anik";
-
-            person = this.Persons.Add();
-            person.Name = "Amya";
+        }
     }
 }
